@@ -13,7 +13,7 @@
   <tbody>
     <% @planets.each do |planet| %>
       <tr>
-        <td><%= planet.name %></td>
+        <td><%= planet.name%></td>
         <td><%= planet.distance_from_earth %></td>
         <td><%= planet.nearest_star %></td>
         <td><%= link_to 'Show', planet %></td>
@@ -21,3 +21,6 @@
     <% end %>
   </tbody>
 </table>
+
+<p><%= link_to "Log New Mission", new_mission_path %></p>
+<p><%= link_to "See All Scientists", scientists_path %></p>

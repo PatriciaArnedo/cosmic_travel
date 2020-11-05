@@ -1,0 +1,15 @@
+<% if flash[:errors] %>
+    <%flash[:errors].each do |error|  %>
+        !! <%= error %> !!<br>
+    <%end %>
+<%end %>
+
+
+
+<%= form_for @scientist do |f| %>
+<%= f.label "Name: " %><br><br>
+<%= f.text_field :name %><br><br>
+<%= f.label "field of Study: " %><br><br>
+<%= f.text_field :field_of_study %><br><br>
+<%= f.submit %>
+<%end  %>

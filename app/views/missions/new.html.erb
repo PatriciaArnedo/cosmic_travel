@@ -1,0 +1,20 @@
+<h1>Log a New Mission</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        !! <%= error %> !! <br>
+    <% end%>
+<%end %>
+
+<%= form_for @mission do |f| %>
+    <%= f.label "Name: " %><br><br>
+    <%= f.text_field :name %><br><br>
+    <%= f.label "Mission Scientist: " %><br><br>
+    <%= f.collection_select(:scientist_id, Scientist.all, :id, :name) %><br><br>
+    <%= f.label "Planet to be Visited: " %><br><br>
+    <%= f.collection_select(:planet_id, Planet.all, :id, :name) %><br><br>
+    <%= f.submit %>
+<% end %>
+
+<p><%= link_to "See All Planets", planets_path %></p>
+<p><%= link_to "See All Scientists", scientists_path %></p>

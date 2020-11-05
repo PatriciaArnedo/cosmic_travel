@@ -1,0 +1,15 @@
+<h1>Scientist Directory</h1>
+
+
+
+<ul>
+<% @scientists.each do |scientist| %>
+    <li><%= link_to scientist.name, scientist_path(scientist) %>
+<%end %>
+</ul>
+
+<p><%= link_to "Log New Scientist", new_scientist_path %></p>
+<p><%= link_to "Log New Mission", new_mission_path %></p>
+<p><%= link_to "See All Planets", planets_path %></p>
+<p><%# link_to "See All Missions", missions_path %></p>
+
